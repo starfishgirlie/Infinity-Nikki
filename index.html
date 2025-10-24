@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi primera página</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { margin: 5px; padding: 10px 15px; }
+    </style>
+</head>
+<body>
+
+<h1>Mi página web interactiva</h1>
+
+<p>Haz clic en los botones para aumentar el puntaje:</p>
+
+<button onclick="sumar(5)">Sumar 5</button>
+<button onclick="sumar(10)">Sumar 10</button>
+
+<p>Total: <span id="resultado">0</span></p>
+
+<script>
+let total = 0;
+
+function sumar(valor) {
+    total += valor;
+    document.getElementById('resultado').innerText = total;
+}
+</script>
+
+</body>
+</html>
