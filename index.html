@@ -11,9 +11,14 @@
 <body>
 
 <h1>Infinity Nikki – Amount of pulls we will get in the next update 1.11</h1>
-<h2>(Unofficial Guide by @comeintoaceage on X / @StarfishGirlie on Reddit</h2>
+<h2>(Unofficial Guide by @comeintoaceage on X / @StarfishGirlie on Reddit)</h2>
 
-<p>Haz clic en los botones para aumentar el puntaje:</p>
+<p>Starts on: <span id="fechaInicio"></span></p>
+<p>Finishes on: <span id="fechaFin"></span></p>
+
+<p>Days: <span id="days"></span></p>
+<p>Weeks: <span id="weeks"></span></p>
+<p>Months: <span id="months"></span></p>
 
 <button onclick="sumar(5)">Sumar 5</button>
 <button onclick="sumar(10)">Sumar 10</button>
@@ -21,8 +26,22 @@
 <p>Total: <span id="resultado">0</span></p>
 
 <script>
-let total = 0;
+let inicio = new Date("2025-10-28");
+let fin = new Date("2025-11-25");
 
+document.getElementById("fechaInicio").innerText = inicio.toDateString();
+document.getElementById("fechaFin").innerText = fin.toDateString();
+    
+let diasMilisegundos = fin - inicio;
+let days = Math.floor(diasMilisegundos / (1000 * 60 * 60 * 24)) + 1;
+let months = 1;
+let weeks = Math.floor(days/7);
+
+document.getElementById("days").innerText = days;
+document.getElementById("weeks").innerText = weeks;
+document.getElementById("months").innerText = months;
+
+let total = 0;
 function sumar(valor) {
     total += valor;
     document.getElementById('resultado').innerText = total;
@@ -31,4 +50,5 @@ function sumar(valor) {
 
 </body>
 </html>
+
 
