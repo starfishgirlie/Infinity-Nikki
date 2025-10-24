@@ -14,9 +14,10 @@
     <h2>(Unofficial Guide by @comeintoaceage on X / @StarfishGirlie on Reddit)</h2>
 
     <h3>Total F2P:</h3>
-        <p>Diamonds: <span id="f2p_dia"></span></p>
-        <p>Revelation crystals: <span id="f2p_pink_crystals"></span></p>
-        <p>Resonance crystals: <span id="blue_crystals"></span></p>
+        <li>Diamonds: <span id="f2p_dia"></span></li>
+        <li>Revelation crystals: <span id="f2p_pink_crystals"></span></li>
+        <li>Resonance crystals: <span id="blue_crystals"></span></li>
+        <p>Which is <span id="total_f2p_pulls"> pulls and <span id="total_f2p_diamonds"> diamonds.</span></p>
         
     <script>
     let inicio = new Date("2025-10-28");
@@ -48,10 +49,15 @@
     let f2p_dia = diariasd + maint5d + maint4d + surveyd + outfitd + eventd + miracrownd;
     let f2p_pink_crystals = eventp + month_mc_p + month_shop_p;
     let blue_crystals = maint5b + maint4b + distantb + month_mc_b + month_shop_b;
+    let total_f2p = (f2p_dia/120) + f2p_pink_crystals;
+    let total_f2p_pulls = Math.floor(total_f2p);
+    let total_f2p_diamonds = Math.round((total_f2p - total_f2p_pulls) * 120);
 
     document.getElementById("f2p_dia").innerText = f2p_dia;
     document.getElementById("f2p_pink_crystals").innerText = f2p_pink_crystals;
     document.getElementById("blue_crystals").innerText = blue_crystals;
+    document.getElementById("total_f2p_pulls").innerText = total_f2p_pulls;
+    document.getElementById("total_f2p_diamonds").innerText = total_f2p_diamonds;
     </script>
     
     </body>
@@ -59,3 +65,4 @@
     
     
     
+
